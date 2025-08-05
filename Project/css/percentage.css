@@ -1,0 +1,350 @@
+/* Percentage Calculator Page Specific Styles */
+
+/* --- Global Styles --- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eafff5;
+    color: #333;
+    font-size: 16px;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2.2rem;
+    font-weight: 700;
+    border-bottom: 2px solid #30d07b;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.section-text {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #eafff5;
+    padding: 30px 0 60px;
+}
+
+.hero-section h1 {
+    padding-top: 10px;
+    font-size: 4rem;
+    color: #27ae60;
+    margin-bottom: 20px;
+    font-weight: 550;
+}
+
+.hero-section p {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 90px;
+    padding-bottom: 60px;
+
+}
+
+.hero-section .hero-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.hero-section .hero-image {
+    max-height: 200px;
+    width: auto;
+}
+
+/* Extended Green Background */
+.extended-green-bg {
+    background-color: #eafff5;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Main Content --- */
+.main-content {
+    background-color: #fff;
+    padding: 0;
+    margin-top: -100px;
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Percentage Section --- */
+.percentage-section {
+    position: relative;
+    margin-top: -120px;
+    margin-bottom: 60px;
+    z-index: 10;
+}
+
+.percentage-form-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 30px;
+}
+
+.calculator-inputs {
+    margin-bottom: 25px;
+}
+
+.percentage-section .form-group {
+    margin-bottom: 20px;
+}
+
+.percentage-section label {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.percentage-section .form-control {
+    height: 42px;
+    padding: 8px 12px;
+    font-size: 1.3rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.percentage-section .form-control:focus {
+    border-color: #30d07b;
+    box-shadow: 0 0 5px rgba(48, 208, 123, 0.25);
+}
+
+/* --- Result Container --- */
+.result-container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 25px;
+    border: 2px solid #e9ecef;
+}
+
+.result-label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.result-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #27ae60;
+}
+
+/* --- Percentage Table --- */
+.percentage-table-container {
+    margin-top: 30px;
+}
+
+.table-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.table-description {
+    font-size: 1.3rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.percentage-table {
+    margin-bottom: 0;
+}
+
+.percentage-table th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 12px 8px;
+}
+
+.percentage-table td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.3rem;
+    padding: 10px 8px;
+}
+
+/* --- Formula Box --- */
+.formula-box {
+    background-color: #f8f9fa;
+    border-left: 4px solid #30d07b;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+
+.formula {
+    font-family: 'Consolas', 'Monaco', monospace;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-align: center;
+}
+
+/* --- Info Section --- */
+.info-section {
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .hero-section h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.6rem;
+    }
+    
+    .percentage-section {
+        margin-top: -80px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .section-text {
+        font-size: 1.3rem;
+    }
+    
+    .table-title {
+        font-size: 1.6rem;
+    }
+    
+    .formula {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding-bottom: 40px;
+    }
+    
+    .extended-green-bg {
+        height: 60px;
+    }
+    
+    .main-content {
+        margin-top: -60px;
+    }
+    
+    .hero-section h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.4rem;
+    }
+    
+    .percentage-section {
+        margin-top: -40px;
+    }
+    
+    .hero-section .hero-image-container {
+        margin-top: 20px;
+    }
+    
+    .percentage-section label {
+        font-size: 1.3rem;
+    }
+    
+    .percentage-section .form-control {
+        font-size: 1.2rem;
+    }
+    
+    .result-label {
+        font-size: 1.4rem;
+    }
+    
+    .result-value {
+        font-size: 2.5rem;
+    }
+    
+    .table-title {
+        font-size: 1.5rem;
+    }
+    
+    .percentage-table th,
+    .percentage-table td {
+        font-size: 1.2rem;
+        padding: 8px 5px;
+    }
+    
+    .formula {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .section-text {
+        font-size: 1.2rem;
+    }
+    
+    .percentage-section label {
+        font-size: 1.2rem;
+    }
+    
+    .percentage-section .form-control {
+        font-size: 1.1rem;
+    }
+    
+    .result-label {
+        font-size: 1.3rem;
+    }
+    
+    .result-value {
+        font-size: 2.2rem;
+    }
+    
+    .table-title {
+        font-size: 1.4rem;
+    }
+    
+    .percentage-table th,
+    .percentage-table td {
+        font-size: 1.1rem;
+        padding: 6px 4px;
+    }
+    
+    .formula {
+        font-size: 1.1rem;
+    }
+}

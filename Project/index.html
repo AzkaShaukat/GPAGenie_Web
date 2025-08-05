@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPA Genie</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style2.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+     <header class="header container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Mobile Search (visible on xs and sm screens) -->
+            <div class="navbar-right visible-xs visible-sm header-right">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="sgpa.html">SGPA</a></li>
+                    <li><a href="cgpa.html">CGPA</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+  <!-- Main Content -->
+  <div class="main container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
+        <div class="main-logo-container">
+          <img src="images/logo.png" alt="Main Logo" class="main-logo img-responsive center-block">
+        </div>
+        <h2 class="tagline">Predict your grades</h2>
+        <p class="subtagline">Unlock your academic potential</p>
+        <div class="main-buttons">
+          <div class="row">
+            <div class="col-xs-6">
+              <a href="signup.html" class="main-btn login">Sign Up</a>
+            </div>
+            <div class="col-xs-6">
+              <a href="login.html" class="main-btn login">Login</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <a href="homepage.html" class="main-btn signup">Continue Without Login</a> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Testimonials Section -->
+<section class="testimonials-section container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>What Students Are Saying</h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2"> 
+      <div class="row testimonials-container">
+        <div class="col-md-6">
+          <div class="testimonial">
+            <p>"GPA Genie helped me stay on track and improve my grades!"</p>
+            <span>- Amna Fiaz, Student</span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="testimonial">
+            <p>"I love how easy it is to use and the predictions are spot on!"</p>
+            <span>- Rehmat Adam, Student</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="js/script.js"></script>
+
+</body>
+</html>

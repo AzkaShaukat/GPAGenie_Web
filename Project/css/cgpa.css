@@ -1,0 +1,135 @@
+/* cgpa.css - Minimal overrides assuming sgpa.css provides base styles */
+
+/* --- Semester Input Row Specific Styling --- */
+/* Style the container for each semester's input fields */
+.semester-input-row {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Vertically align items in the middle */
+    gap: 10px; /* Space between elements (modern browsers) */
+    margin-bottom: 15px; /* Space below each row */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 10px; /* Padding inside the row */
+    border: 1px solid #eee; /* Subtle border */
+    border-radius: 5px; /* Slightly rounded corners */
+    background-color: #fdfdfd; /* Very light background */
+}
+
+/* Fallback for older browsers not supporting gap */
+@supports not (gap: 10px) {
+    .semester-input-row > * {
+        margin-right: 10px;
+        margin-bottom: 10px; /* Add bottom margin for wrapping */
+    }
+    .semester-input-row > *:last-child {
+        margin-right: 0;
+    }
+}
+
+
+
+/* Style the label within the semester row */
+.semester-input-row .control-label {
+    flex: 0 0 100px; /* Fixed width for the label */
+    margin-bottom: 0; /* Remove default bottom margin */
+    font-size: 1.2rem; /* Smaller font size for the label */
+    font-weight: normal; /* Normal weight */
+    text-align: right; /* Right-align label text */
+    padding-right: 5px; /* Space between label and input */
+}
+
+/* Style the form groups containing the inputs for validation highlighting */
+/* Ensures BS3 .has-error class targets the wrapper */
+.semester-input-row .form-group {
+    flex: 1 1 120px; /* Allow inputs to grow and shrink, base width 120px */
+    margin-bottom: 0; /* Remove default bottom margin */
+    min-width: 100px; /* Minimum width for inputs */
+}
+
+/* Ensure inputs within the row take available space */
+.semester-input-row .form-control {
+    width: 100%; /* Make input fill its container */
+    /* Inherits height, border-radius etc. from sgpa.css */
+}
+
+/* Style the small remove button */
+/* Uses .btn-xs and .btn-danger from Bootstrap 3 */
+.semester-input-row .remove-semester-row {
+    flex-shrink: 0; /* Prevent button from shrinking */
+    margin-left: auto; /* Push button to the far right */
+    /* Padding, font-size, line-height are handled by .btn-xs */
+}
+
+/* --- CGPA Display Specific Styling (Top/Bottom Layout) --- */
+/* Container for the CGPA label and score */
+.cgpa-display {
+    margin-bottom: 15px; /* Space below the display */
+    text-align: center; /* Center the content */
+}
+
+/* Style for the "Your CGPA is:" label */
+.cgpa-label {
+    font-size: 1.5rem; /* Font size for the label (can adjust) */
+    font-weight: normal; /* Normal font weight */
+    color: #555; /* Grey color (inherits from sgpa.css?) */
+    display: block; /* Make it a block element to stack */
+    margin-bottom: 5px; /* Space between label and score */
+    /* Inherits text alignment from parent */
+}
+
+/* Style for the actual CGPA score */
+.cgpa-score {
+    font-size: 2.8rem; /* Large font size for the score (inherits from sgpa.css?) */
+    color: #27ae60; /* Green color (inherits from sgpa.css?) */
+    font-weight: 700; /* Bold font weight (inherits from sgpa.css?) */
+    display: block; /* Make it a block element to stack */
+    line-height: 1.1; /* Adjust line height for large font */
+    /* Inherits text alignment from parent */
+}
+
+/* --- Responsive Adjustments for Semester Rows --- */
+@media (max-width: 767px) {
+    /* Stack semester input elements vertically on small screens */
+    .semester-input-row {
+        flex-direction: column; /* Stack elements */
+        align-items: stretch; /* Stretch items to full width */
+    }
+
+    /* Adjust label alignment and spacing */
+    .semester-input-row .control-label {
+        flex-basis: auto; /* Reset fixed basis */
+        text-align: left; /* Align label left */
+        margin-bottom: 5px; /* Add space below label */
+        padding-right: 0;
+    }
+
+    /* Adjust form group wrapper */
+    .semester-input-row .form-group {
+        min-width: 0; /* Remove min-width */
+        flex-basis: auto; /* Reset flex basis */
+    }
+
+    /* Move remove button to the end */
+    .semester-input-row .remove-semester-row {
+        margin-left: 0; /* Reset margin */
+        align-self: flex-end; /* Align button to the right */
+        margin-top: 5px; /* Add space above button */
+    }
+
+    /* Optional: Adjust result display font sizes on small screens */
+    .cgpa-label {
+        font-size: 1.3rem;
+    }
+    .cgpa-score {
+        font-size: 2.4rem;
+    }
+}
+
+/* Add any other CGPA-specific styles or overrides below */
+
+/* Example: Override result table header if needed */
+/*
+.result-table thead tr.bg-primary th {
+    background-color: #your-color !important;
+    color: #your-text-color !important;
+}
+*/

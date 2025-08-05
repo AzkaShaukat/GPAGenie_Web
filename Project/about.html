@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - GPA Genie</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+     <header class="header container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Mobile Search (visible on xs and sm screens) -->
+            <div class="navbar-right visible-xs visible-sm header-right">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="sgpa.html">SGPA</a></li>
+                    <li><a href="cgpa.html">CGPA</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li class="active"><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <!-- Hero Section with Light Green Background -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center page-title">About Our Website</h1>
+                    <p class="lead text-center">
+                        Welcome to GPA Genie, your comprehensive academic calculator suite. We've designed this platform to help students easily calculate and understand their academic performance metrics. Our tools are intuitive, accurate, and designed with students' needs in mind.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with White Background -->
+    <main class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h2 class="section-title text-center">Our Calculator Tools</h2>
+                    <p class="section-description text-center">
+                        GPA Genie offers a variety of calculators to help you track and understand your academic performance. Each tool is designed to be simple to use while providing accurate results.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Calculator Containers -->
+            <div class="row">
+                <!-- SGPA Calculator Container -->
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="calculator-container">
+                        <div class="calculator-label">SGPA</div>
+                        <div class="calculator-content">
+                            <h3>Semester Grade Point Average Calculator</h3>
+                            <p>
+                                The SGPA calculator helps you determine your academic performance for a single semester. It calculates your Semester Grade Point Average based on the grades and credit hours of each course you've taken.
+                            </p>
+                            <h4>How It Works:</h4>
+                            <ol>
+                                <li>Enter your personal information (name, email, favorite subject) if you wish</li>
+                                <li>Add your courses with their respective letter grades (A+, A, B+, etc.) and credit hours</li>
+                                <li>Use the "Add Course" button to include additional courses as needed</li>
+                                <li>Click "Calculate SGPA" to see your semester performance</li>
+                                <li>View a detailed breakdown of your results, including a visual representation of your SGPA</li>
+                                <li>Print your results if needed for your records</li>
+                            </ol>
+                            <a href="sgpa.html" class="calculator-link">Go to SGPA Calculator <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CGPA Calculator Container -->
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="calculator-container">
+                        <div class="calculator-label">CGPA</div>
+                        <div class="calculator-content">
+                            <h3>Cumulative Grade Point Average Calculator</h3>
+                            <p>
+                                The CGPA calculator helps you track your overall academic performance across multiple semesters. It provides a comprehensive view of your academic journey by calculating your Cumulative Grade Point Average.
+                            </p>
+                            <h4>How It Works:</h4>
+                            <ol>
+                                <li>Enter your personal information if you wish to include it in your results</li>
+                                <li>Add each semester's SGPA and total credit hours</li>
+                                <li>Use the "Add Semester" button to include additional semesters</li>
+                                <li>Click "Calculate CGPA" to see your cumulative performance</li>
+                                <li>View a detailed breakdown showing how each semester contributes to your overall CGPA</li>
+                                <li>Use the progress circle to visualize your performance on a 4.0 scale</li>
+                                <li>Print your results for your records or academic planning</li>
+                            </ol>
+                            <a href="cgpa.html" class="calculator-link">Go to CGPA Calculator <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Percentage Calculator Container -->
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="calculator-container">
+                        <div class="calculator-label">Percentage</div>
+                        <div class="calculator-content">
+                            <h3>Percentage Calculator</h3>
+                            <p>
+                                Our Percentage Calculator helps you convert your raw marks into percentage scores. This is particularly useful for understanding your performance in exams and assignments where results are reported as percentages.
+                            </p>
+                            <h4>How It Works:</h4>
+                            <ol>
+                                <li>Enter your scored marks in the first input field</li>
+                                <li>Enter the maximum possible marks in the second input field (default is 100)</li>
+                                <li>The calculator instantly displays your percentage score</li>
+                                <li>The result is color-coded based on your performance level</li>
+                                <li>Use the reference table to understand common mark-to-percentage conversions</li>
+                                <li>The calculator ensures your scored marks don't exceed the maximum possible marks</li>
+                            </ol>
+                            <a href="percentage.html" class="calculator-link">Go to Percentage Calculator <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GPA Converter Container -->
+                <div class="col-md-10 col-md-offset-1">
+                    <div class="calculator-container">
+                        <div class="calculator-label">Converter</div>
+                        <div class="calculator-content">
+                            <h3>GPA Converter</h3>
+                            <p>
+                                The GPA Converter allows you to translate between different grading systems - letter grades, percentage scores, and GPA points. This is especially helpful when you need to understand equivalencies between different academic systems.
+                            </p>
+                            <h4>How It Works:</h4>
+                            <ol>
+                                <li>Select a letter grade from the dropdown menu, OR</li>
+                                <li>Select a percentage score from the percentage dropdown, OR</li>
+                                <li>Enter a GPA value in the GPA points field</li>
+                                <li>The other fields automatically update with equivalent values</li>
+                                <li>The conversion table highlights the corresponding row for your selected values</li>
+                                <li>Use this tool to understand how your grades translate across different systems</li>
+                                <li>Particularly useful for international applications or transfers between institutions</li>
+                            </ol>
+                            <a href="converter.html" class="calculator-link">Go to GPA Converter <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                 <div class="row">
+                <div class="col-md-12">
+                    <section class="mission-section">
+                        <h2 class="section-title">Our Mission</h2>
+                        <p class="section-text">
+                            At GPA Genie, our mission is to simplify academic performance tracking for students worldwide. We understand the importance of monitoring your academic progress and how it impacts your educational journey and future opportunities.
+                        </p>
+                        <p class="section-text">
+                            We've designed our tools to be intuitive, accurate, and accessible to all students, regardless of their educational institution or grading system. Our goal is to help you make informed decisions about your studies by providing clear insights into your academic performance.
+                        </p>
+                        <p class="section-text">
+                            Whether you're trying to maintain a scholarship, planning your course load for upcoming semesters, or simply keeping track of your progress, GPA Genie is here to help you succeed in your academic endeavors.
+                        </p>
+                    </section>
+                </div>
+            </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>

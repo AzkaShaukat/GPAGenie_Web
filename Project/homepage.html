@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Genie - Home</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <style>
+        .hero-search-section {
+            background: linear-gradient(135deg, #eafff5 0%, #77DD77 150%);
+            padding: 60px 0;
+            margin-bottom: 0px;
+        }
+        .hero-search-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .hero-search-title {
+            color: #333;
+            font-size: em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        .hero-search-subtitle {
+            color: #333;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+        }
+        .hero-search-form {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .hero-search-input {
+            width: 100%;
+            height: 60px;
+            font-size: 18px;
+            padding: 15px 60px 15px 25px;
+            border: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .hero-search-input:focus {
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+            transform: translateY(-2px);
+        }
+        .hero-search-btn {
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            height: 44px;
+            width: 44px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            color: black;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+
+        }
+        .hero-search-btn:hover {
+            background: #1976D2;
+            transform: scale(1.05);
+        }
+        .search-suggestions {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            display: none;
+        }
+        .search-suggestion-item {
+            padding: 15px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        .search-suggestion-item:hover {
+            background-color: #f8f9fa;
+        }
+        .search-suggestion-item:last-child {
+            border-bottom: none;
+        }
+        .suggestion-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .suggestion-description {
+            color: #666;
+            font-size: 14px;
+        }
+        .quick-actions {
+            margin-top: 30px;
+        }
+        .quick-action-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: #333;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .quick-action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: black;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+<header class="header container-fluid" style="margin-bottom:0px; padding-bottom:0px">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <div class="navbar-right visible-xs visible-sm header-right" id="mobileSearchContainer_toBeHiddenOrRepurposed">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li class="active"><a href="homepage.html">Home</a></li>
+                    <li><a href="sgpa.html">SGPA</a></li>
+                    <li><a href="cgpa.html">CGPA</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Hero Search Section -->
+<section class="hero-search-section">
+    <div class="container">
+        <div class="hero-search-container">
+            <h1 class="hero-search-title">Find Your Academic Tool</h1>
+            <p class="hero-search-subtitle">Search for GPA calculators, converters, and academic resources</p>
+            
+            <form class="hero-search-form" id="heroSearchForm" onsubmit="return false;">
+                <input type="text" id="heroSearchInput" class="hero-search-input" placeholder="Search for SGPA, CGPA, Converter, Percentage..." autocomplete="off">
+                <button type="button" class="hero-search-btn" id="heroSearchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div class="search-suggestions" id="heroSearchSuggestions"></div>
+            </form>
+            
+            <div class="quick-actions">
+                <a href="sgpa.html" class="quick-action-btn">SGPA Calculator</a>
+                <a href="cgpa.html" class="quick-action-btn">CGPA Calculator</a>
+                <a href="converter.html" class="quick-action-btn">Grade Converter</a>
+                <a href="percentage.html" class="quick-action-btn">Percentage Calculator</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="main container">
+    <div class="row main-content">
+        <div class="col-lg-6 col-md-6 text-section">
+            <h1 style="width:auto;">Welcome to GPA Genie</h1>
+            <p> Unlock your academic potential with our data-driven tools. From accurate predictions to comprehensive performance reports, GPA Genie helps you make informed decisions for your education journey. </p>
+            <div class="main-buttons">
+                <div class="dropdown">
+                    <button class="main-btn signup dropdown-toggle" type="button" id="getStartedButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        Get Started <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-content" aria-labelledby="getStartedButton">
+                        <li><a href="sgpa.html">SGPA</a></li>
+                        <li><a href="cgpa.html">CGPA</a></li>
+                        <li><a href="grade.html">Grade</a></li>
+                        <li><a href="percentage.html">Percentage</a></li>
+                        <li><a href="converter.html">Converter</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 image-section">
+            <img src="images/bg1.png" alt="Academic Success Illustration" class="main-image img-responsive">
+        </div>
+    </div>
+</main>
+
+<section class="card-section">
+    <div class="container">
+        <h2 class="text-center">Why Use GPA Genie?</h2>
+        <div class="row card-boxes">
+            <div class="col-lg-offset-1 col-lg-2 col-md-4 col-sm-6">
+                <div class="card-box">
+                    <h3>Accurate Predictions</h3>
+                    <p>Receive precise, data-backed forecasts of your academic performance.</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="card-box">
+                    <h3>User-Friendly</h3>
+                    <p>Enjoy an intuitive interface designed with students in mind.</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="card-box">
+                    <h3>Real-Time Analysis</h3>
+                    <p>Stay updated with dynamic insights and performance tracking.</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+               <div class="card-box">
+                    <h3>Comprehensive Reports</h3>
+                    <p>Get detailed reports to plan your academic strategy effectively.</p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="card-box">
+                    <h3>Community Driven</h3>
+                    <p>Share experiences and learn tips from fellow students.</p>
+                    </div>
+            </div>
+            </div>
+    </div>
+</section>
+
+<section class="quote-section container">
+    <blockquote class="text-center">
+        "Success is the sum of small efforts, repeated day in and day out." — Robert Collier
+    </blockquote>
+</section>
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="js/script.js"></script>
+<script>
+// Enhanced search functionality for homepage
+document.addEventListener('DOMContentLoaded', function() {
+    const heroSearchInput = document.getElementById('heroSearchInput');
+    const heroSearchBtn = document.getElementById('heroSearchBtn');
+    const heroSearchSuggestions = document.getElementById('heroSearchSuggestions');
+    
+    // Search data
+    const searchData = [
+        {
+            title: 'SGPA Calculator',
+            description: 'Calculate your Semester Grade Point Average',
+            url: 'sgpa.html',
+            keywords: ['sgpa', 'semester', 'gpa', 'calculator', 'grade point']
+        },
+        {
+            title: 'CGPA Calculator', 
+            description: 'Calculate your Cumulative Grade Point Average',
+            url: 'cgpa.html',
+            keywords: ['cgpa', 'cumulative', 'gpa', 'calculator', 'overall']
+        },
+        {
+            title: 'Grade Converter',
+            description: 'Convert between letter grades, percentage, and GPA',
+            url: 'converter.html',
+            keywords: ['converter', 'convert', 'grade', 'percentage', 'letter', 'gpa']
+        },
+        {
+            title: 'Percentage Calculator',
+            description: 'Convert GPA to percentage and vice versa',
+            url: 'percentage.html',
+            keywords: ['percentage', 'percent', 'calculator', 'convert']
+        },
+        {
+            title: 'About GPA Genie',
+            description: 'Learn more about our academic tools',
+            url: 'about.html',
+            keywords: ['about', 'info', 'information', 'help']
+        }
+    ];
+    
+    function performSearch(query) {
+        if (!query.trim()) {
+            heroSearchSuggestions.style.display = 'none';
+            return;
+        }
+        
+        const results = searchData.filter(item => {
+            const searchTerms = query.toLowerCase().split(' ');
+            return searchTerms.some(term => 
+                item.keywords.some(keyword => keyword.includes(term)) ||
+                item.title.toLowerCase().includes(term) ||
+                item.description.toLowerCase().includes(term)
+            );
+        });
+        
+        displaySearchResults(results);
+    }
+    
+    function displaySearchResults(results) {
+        if (results.length === 0) {
+            heroSearchSuggestions.innerHTML = '<div class="search-suggestion-item"><div class="suggestion-title">No results found</div><div class="suggestion-description">Try searching for SGPA, CGPA, Converter, or Percentage</div></div>';
+            heroSearchSuggestions.style.display = 'block';
+            return;
+        }
+        
+        const html = results.map(result => `
+            <div class="search-suggestion-item" onclick="window.location.href='${result.url}'">
+                <div class="suggestion-title">${result.title}</div>
+                <div class="suggestion-description">${result.description}</div>
+            </div>
+        `).join('');
+        
+        heroSearchSuggestions.innerHTML = html;
+        heroSearchSuggestions.style.display = 'block';
+    }
+    
+    // Search input event listeners
+    heroSearchInput.addEventListener('input', function() {
+        performSearch(this.value);
+    });
+    
+    heroSearchInput.addEventListener('focus', function() {
+        if (this.value.trim()) {
+            performSearch(this.value);
+        }
+    });
+    
+    heroSearchBtn.addEventListener('click', function() {
+        performSearch(heroSearchInput.value);
+    });
+    
+    // Hide suggestions when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.hero-search-form')) {
+            heroSearchSuggestions.style.display = 'none';
+        }
+    });
+    
+    // Handle enter key
+    heroSearchInput.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            const firstResult = heroSearchSuggestions.querySelector('.search-suggestion-item');
+            if (firstResult) {
+                firstResult.click();
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>

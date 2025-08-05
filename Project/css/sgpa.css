@@ -1,0 +1,596 @@
+/* SGPA Page Specific Styles - Consistent with style2.css */
+
+/* --- Global Styles --- */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #eafff5;
+    color: #333;
+    font-size: 16px;
+}
+
+.section-title {
+    color: #333;
+    font-size: 2rem;
+    font-weight: 600;
+    border-bottom: 2px solid #30d07b;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 24px;
+}
+
+.section-text {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* --- Hero Section --- */
+.hero-section h1 {
+    padding-top: 10px;
+    font-size: 4.0rem;
+    color: #27ae60;
+    margin-bottom: 20px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 30 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: 0em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+
+}
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: transparent; }
+}
+
+.hero-section p {
+    font-size: 1.8rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* --- Main Content --- */
+.main-content {
+    background-color: #fff;
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+
+.image-container {
+    margin-bottom: 30px;
+}
+
+.sgpa-image {
+    height: 250px;
+    width: auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* --- Info Sections --- */
+.info-section {
+    background-color: #eafff5;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-section .section-title {
+    color: #333;
+    border-bottom-color: #30d07b;
+    font-weight: bold;
+}
+
+.info-section .form-control {
+    height: 38px;
+    padding: 8px 12px;
+    font-size: 1.2rem;
+    border: 2px solid #333;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.info-section .form-control:focus {
+    border-color: #30d07b;
+    box-shadow: 0 0 5px rgba(48, 208, 123, 0.25);
+}
+
+.info-section label {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    display: block;
+    color: #333;
+}
+
+.info-section .checkbox label {
+    font-size: 1.2rem;
+}
+
+/* --- Courses Table --- */
+.courses-table {
+    margin-bottom: 24px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+}
+
+.courses-table th {
+    font-weight: bold;
+    color: #333;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom-width: 2px;
+    padding: 12px 8px;
+}
+
+.courses-table td {
+    padding: 12px 8px;
+    vertical-align: middle;
+    font-size: 1.2rem;
+}
+
+.courses-table .form-control {
+    font-size: 1.2rem;
+    height: 38px;
+    border-radius: 25px;
+    border: 2px solid #333;
+    background-color: #fff;
+}
+
+.courses-table .form-control:focus {
+    border-color: #30d07b;
+    box-shadow: 0 0 5px rgba(48, 208, 123, 0.25);
+}
+
+.courses-table .course-name {
+    min-width: 180px;
+}
+
+/* --- Buttons --- */
+.add-course-btn,
+.calculate-btn,
+#printResultBtn {
+    padding: 12px 28px;
+    color: white;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+    font-size: 1.2rem;
+    display: inline-block;
+}
+
+.add-course-btn {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.add-course-btn:hover {
+    background-color: #5a6268;
+    border-color: #5a6268;
+    transform: translateY(-1px);
+}
+
+.calculate-btn {
+    background-color: #30d07b;
+    color: white;
+    border-color: #fff;
+}
+
+.calculate-btn:hover {
+    background-color: #28a66e;
+    color: #333;
+    transform: translateY(-1px);
+}
+
+#printResultBtn {
+    background-color: #007bff;
+    border-color: #007bff;
+    margin-top: 16px;
+}
+
+#printResultBtn:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+.button-row {
+    margin-top: 20px;
+}
+
+.remove-course-btn {
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 50%;
+}
+
+/* --- Result Area --- */
+.result-container {
+    background-color: rgba(233, 247, 239, 0.8);
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(195, 230, 203, 0.9);
+}
+.result-section .section-title {
+    color: #333;
+    border-bottom-color: #30d07b;
+    font-weight: bold;
+}
+
+.sgpa-display {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 16px;
+}
+
+.sgpa-label {
+    font-weight: normal;
+    color: #555;
+    font-size: 1.5rem;
+}
+
+.sgpa-score {
+    color: #27ae60;
+    font-size: 2.8rem;
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+/* Result Table */
+.result-table {
+    margin-bottom: 24px;
+}
+
+.result-table caption {
+    color: #6c757d;
+    font-size: 1.2rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: left;
+}
+
+.result-table th,
+.result-table td {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 12px 8px;
+}
+
+.result-table thead tr th {
+    background-color: rgba(51, 51, 51, 0.9) !important;
+    color: white;
+    border-color: #454d55;
+}
+
+.result-table tfoot td {
+    font-weight: bold;
+    background-color: rgba(233, 236, 239, 0.9);
+    color: #000;
+}
+
+/* --- Custom SVG Progress Circle --- */
+.progress-circle-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin: 20px auto;
+}
+
+.progress-ring {
+    transform: rotate(-90deg);
+}
+
+.progress-ring-background {
+    stroke: #e9ecef;
+}
+
+.progress-ring-circle {
+    transition: stroke-dashoffset 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+    stroke: #30d07b;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: #30d07b;
+    font-family: Consolas, Monaco, monospace;
+}
+
+/* --- Understanding GPA Section --- */
+.understanding-section {
+    background-color: #eafff5;
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+
+.understanding-section .section-title {
+    color: #333;
+    border-bottom-color: #30d07b;
+    font-weight: bold;
+}
+
+.understanding-section .section-text {
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.content-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: #333;
+    border: 3px solid rgba(48, 208, 123, 0.3);
+    font-size: 1.25rem;
+}
+
+.content-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.grade-list {
+    padding-left: 0;
+}
+
+.grade-list li {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+}
+
+.note-text {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* --- Examples Section --- */
+.examples-section {
+    background-color: #fff;
+    padding: 40px 0;
+    padding-bottom: 30px;
+}
+
+.examples-section .section-title {
+    color: #333;
+    border-bottom-color: #30d07b;
+    font-weight: bold;
+}
+
+.example-table th, 
+.example-table td {
+    padding: 8px 10px;
+    font-size: 1.5rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.example-table thead tr.active th {
+    background-color: rgba(248, 249, 250, 0.9) !important;
+    font-weight: 600;
+    border-bottom-width: 2px;
+}
+
+.example-table tbody td:first-child {
+    text-align: left;
+}
+
+.example-table tfoot tr.active td {
+    background-color: rgba(226, 227, 229, 0.9) !important;
+    color: #000;
+}
+
+.example-table tfoot tr.success td {
+    background-color: rgba(209, 231, 221, 0.9) !important;
+    color: #0f5132;
+}
+
+.card-section .section-title {
+    color: #333;
+    border-bottom-color: #30d07b;
+    font-weight: bold;
+font-size: 2rem;
+}
+/* --- Alert --- */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+/* --- Student Info Result --- */
+.student-info-result {
+    background-color: rgba(234, 255, 245, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(48, 208, 123, 0.3);
+}
+
+.student-info-result h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.student-info-result p {
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .sgpa-score {
+        font-size: 2.4rem;
+    }
+    
+    .tip-card {
+        padding: 20px;
+    }
+    
+    .tip-card h3 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-section,
+    .main-content,
+    .understanding-section,
+    .examples-section,
+    .tips-section {
+        padding: 30px 0;
+    }
+    
+    .section-title {
+        font-size: 1.6rem;
+    }
+    
+    .info-section,
+    .content-card,
+    .result-container {
+        padding: 20px;
+    }
+    
+    .courses-table th, 
+    .courses-table td,
+    .result-table th,
+    .result-table td,
+    .example-table th, 
+    .example-table td {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+    
+    .courses-table .form-control,
+    .info-section .form-control {
+        font-size: 1.1rem;
+    }
+    
+    .add-course-btn, 
+    .calculate-btn, 
+    #printResultBtn {
+        font-size: 1.1rem;
+        padding: 10px 20px;
+    }
+    
+    .sgpa-display {
+        font-size: 1.5rem;
+    }
+    
+    .sgpa-label {
+        font-size: 1.2rem;
+    }
+    
+    .progress-circle-container {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .progress-text {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section,
+    .main-content,
+    .understanding-section,
+    .examples-section,
+    .tips-section {
+        padding: 20px 0;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .info-section,
+    .content-card,
+    .result-container {
+        padding: 15px;
+    }
+    
+    .courses-table th, 
+    .courses-table td,
+    .result-table th,
+    .result-table td,
+    .example-table th, 
+    .example-table td {
+        font-size: 1rem;
+        padding: 6px;
+    }
+    
+    .courses-table .form-control,
+    .info-section .form-control {
+        font-size: 1rem;
+    }
+    
+    .add-course-btn, 
+    .calculate-btn, 
+    #printResultBtn {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+    
+    .sgpa-display {
+        font-size: 1.3rem;
+    }
+    
+    .sgpa-label {
+        font-size: 1.1rem;
+    }
+    
+    .progress-circle-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .progress-text {
+        font-size: 1.4rem;
+    }
+    
+    .footer-container .footer-links,
+    .footer-container .social-icons {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}

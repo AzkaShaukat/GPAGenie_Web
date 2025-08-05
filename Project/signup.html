@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - GPA Genie</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+     <header class="header container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Mobile Search (visible on xs and sm screens) -->
+            <div class="navbar-right visible-xs visible-sm header-right">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="sgpa.html">SGPA</a></li>
+                    <li><a href="cgpa.html">CGPA</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <!-- Hero Section with Light Green Background -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center page-title">Create Your Account</h1>
+                    <p class="lead text-center">
+                        Join GPA Genie to save your calculations, track your progress, and access additional features.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with White Background -->
+    <main class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <div class="auth-container">
+                        <div class="auth-form">
+                            <form id="signupForm">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name</label>
+                                    <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="password" class="form-control" placeholder="Create a password" required>
+                                        <span class="toggle-password" title="Show/Hide Password">
+                                            <i class="fas fa-eye"></i>
+                                        </span>
+                                    </div>
+                                    <div class="password-strength">
+                                        <div class="strength-meter">
+                                            <div class="strength-meter-fill" data-strength="0"></div>
+                                        </div>
+                                        <div class="strength-text">Password strength: <span>Weak</span></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="confirmPassword">Confirm Password</label>
+                                    <div class="password-input-container">
+                                        <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm your password" required>
+                                        <span class="toggle-password" title="Show/Hide Password">
+                                            <i class="fas fa-eye"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="form-group terms-checkbox">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" id="agreeTerms" required> I agree to the <a href="terms.html">Terms of Service</a> and <a href="privacy.html">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+                                </div>
+                            </form>
+                            <div class="auth-divider">
+                                <span>OR</span>
+                            </div>
+                            <div class="social-login">
+                                <button class="btn btn-google">
+                                    <i class="fab fa-google"></i> Sign up with Google
+                                </button>
+                                <button class="btn btn-facebook">
+                                    <i class="fab fa-facebook-f"></i> Sign up with Facebook
+                                </button>
+                            </div>
+                            <div class="auth-footer">
+                                <p>Already have an account? <a href="login.html">Login</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

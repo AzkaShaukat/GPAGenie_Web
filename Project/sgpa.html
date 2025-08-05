@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA Calculator - GPA Genie</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/sgpa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+      <header class="header container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Mobile Search (visible on xs and sm screens) -->
+            <div class="navbar-right visible-xs visible-sm header-right">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li class="active"><a href="sgpa.html">SGPA</a></li>
+                    <li><a href="cgpa.html">CGPA</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-left page-title"  style="padding-top:40px">SGPA Calculator</h1>
+                    <p class="lead text-left">SGPA stands for Semester Grade Point Average. It is an indicator of a student's academic performance in a particular semester. The SGPA is calculated based on the grade points obtained in all courses during the semester.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="hero-image-container">
+                        <img src="images/bg10.png" alt="Cumulative Study Illustration" class="img-responsive hero-image" style="padding-bottom:20px; height400px; float:right;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with White Background -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Student Info and Courses Container -->
+            <div class="row">
+                <div class="col-lg-4 col-md-5">
+                    <!-- Student Information Section -->
+                    <section class="student-info-section info-section">
+                        <h2 class="section-title">Student Information</h2>
+                        <form id="studentInfoForm">
+                            <div class="form-group">
+                                <label for="name" class="control-label">Name:</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="control-label">Favorite Subject:</label>
+                                <input type="text" id="subject" class="form-control" placeholder="e.g. Web Engineering">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email (Gmail):</label>
+                                <input type="email" id="email" class="form-control" placeholder="you@example.com">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="result-card"> Send me the result card
+                                </label>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+                <div class="col-lg-8 col-md-7">
+                    <!-- Semester Courses Section -->
+                    <section class="sgpa-form-section info-section">
+                        <h2 class="section-title">Enter Semester Courses</h2>
+                        <form id="sgpaCalcForm">
+                            <div class="table-responsive">
+                                <table class="table courses-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Course Name (Optional)</th>
+                                            <th>Grade</th>
+                                            <th>Credits</th>
+                                            <th class="text-center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="course-table-body">
+                                        <tr class="course-row">
+                                            <td><input type="text" class="form-control course-name" placeholder="Subject 1"></td>
+                                            <td>
+                                                <select class="form-control course-grade">
+                                                    <option value="4.3">A+</option>
+                                                    <option value="4.0" selected>A</option>
+                                                    <option value="3.7">A-</option>
+                                                    <option value="3.3">B+</option>
+                                                    <option value="3.0">B</option>
+                                                    <option value="2.7">B-</option>
+                                                    <option value="2.3">C+</option>
+                                                    <option value="2.0">C</option>
+                                                    <option value="1.7">C-</option>
+                                                    <option value="1.3">D+</option>
+                                                    <option value="1.0">D</option>
+                                                    <option value="0.7">D-</option>
+                                                    <option value="0.0">F</option>
+                                                    <option value="-1">Ignore (P/NP/I/W)</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="number" class="form-control course-credits" placeholder="e.g. 3" min="0.5" step="0.5" value="3"></td>
+                                            <td class="text-center"><button type="button" class="btn btn-sm btn-danger remove-course-btn" title="Remove Course">&times;</button></td>
+                                        </tr>
+                                        <tr class="course-row">
+                                            <td><input type="text" class="form-control course-name" placeholder="Subject 2"></td>
+                                            <td>
+                                                <select class="form-control course-grade">
+                                                    <option value="4.3">A+</option>
+                                                    <option value="4.0">A</option>
+                                                    <option value="3.7">A-</option>
+                                                    <option value="3.3" selected>B+</option>
+                                                    <option value="3.0">B</option>
+                                                    <option value="2.7">B-</option>
+                                                    <option value="2.3">C+</option>
+                                                    <option value="2.0">C</option>
+                                                    <option value="1.7">C-</option>
+                                                    <option value="1.3">D+</option>
+                                                    <option value="1.0">D</option>
+                                                    <option value="0.7">D-</option>
+                                                    <option value="0.0">F</option>
+                                                    <option value="-1">Ignore (P/NP/I/W)</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="number" class="form-control course-credits" placeholder="e.g. 3" min="0.5" step="0.5" value="3"></td>
+                                            <td class="text-center"><button type="button" class="btn btn-sm btn-danger remove-course-btn" title="Remove Course">&times;</button></td>
+                                        </tr>
+                                        <tr class="course-row">
+                                            <td><input type="text" class="form-control course-name" placeholder="Subject 3"></td>
+                                            <td>
+                                                <select class="form-control course-grade">
+                                                    <option value="4.3">A+</option>
+                                                    <option value="4.0">A</option>
+                                                    <option value="3.7">A-</option>
+                                                    <option value="3.3">B+</option>
+                                                    <option value="3.0" selected>B</option>
+                                                    <option value="2.7">B-</option>
+                                                    <option value="2.3">C+</option>
+                                                    <option value="2.0">C</option>
+                                                    <option value="1.7">C-</option>
+                                                    <option value="1.3">D+</option>
+                                                    <option value="1.0">D</option>
+                                                    <option value="0.7">D-</option>
+                                                    <option value="0.0">F</option>
+                                                    <option value="-1">Ignore (P/NP/I/W)</option>
+                                                </select>
+                                            </td>
+                                            <td><input type="number" class="form-control course-credits" placeholder="e.g. 3" min="0.5" step="0.5" value="3"></td>
+                                            <td class="text-center"><button type="button" class="btn btn-sm btn-danger remove-course-btn" title="Remove Course">&times;</button></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="button-row clearfix">
+                                <button type="button" class="btn add-course-btn pull-left"><i class="fas fa-plus"></i> Add Course</button>
+                                <button type="submit" class="btn calculate-btn pull-right">Calculate SGPA</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+
+            <!-- Result Area Section -->
+            <section id="result-area" style="display: none;">
+                <div class="result-container">
+                    <h2 class="section-title text-center">Your Semester Result</h2>
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover result-table">
+                                    <caption>Summary of your grades</caption>
+                                    <thead>
+                                        <tr class="bg-primary">
+                                            <th>Course Name</th>
+                                            <th>Grade</th>
+                                            <th>Credits</th>
+                                            <th>Grade Points</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="result-table-body">
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="active">
+                                            <td colspan="2"><strong>Total</strong></td>
+                                            <td id="result-total-credits"></td>
+                                            <td id="result-total-points"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="sgpa-display">
+                                <span class="sgpa-label">Your SGPA is:</span>
+                                <span id="sgpa-value" class="sgpa-score">0.00</span>
+                            </div>
+                            <div class="progress-circle-container">
+                                <svg class="progress-ring" width="160" height="160">
+                                    <circle
+                                        class="progress-ring-background"
+                                        stroke-width="14"
+                                        fill="transparent"
+                                        r="70"
+                                        cx="80"
+                                        cy="80"/>
+                                    <circle
+                                        id="progress-ring-foreground"
+                                        class="progress-ring-circle"
+                                        stroke-width="14"
+                                        stroke-linecap="round"
+                                        fill="transparent"
+                                        r="70"
+                                        cx="80"
+                                        cy="80"/>
+                                </svg>
+                                <div class="progress-text" id="progress-circle-text">0%</div>
+                            </div>
+                            <button class="btn btn-default" id="printResultBtn"><i class="fas fa-print"></i> Print Result</button>
+                        </div>
+                    </div>
+                    <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Understanding GPA Section with Full Width Green Background -->
+    <section class="understanding-section">
+        <div class="container">
+            <h2 class="section-title">Understanding GPA & Grades</h2>
+            <p class="section-text">Grade point average (GPA) is a commonly used indicator of an individual's academic achievement in school. It is the average of the grades attained in each course, taking course credit into consideration. Grading systems vary in different countries, or even schools.</p>
+            
+            <!-- Letter Grades in White Container with Green Border -->
+            <div class="content-card">
+                <h3 class="h5">Letter Grades and Numerical Equivalents</h3>
+                <p>This calculator accepts letter grades and translates them into numerical values as shown below. Grades like P (pass), NP (not pass), I (incomplete), or W (withdrawal) will be ignored in the calculation (select "Ignore").</p>
+                <ul class="list-unstyled grade-list row">
+                    <li class="col-sm-6 col-md-4"><strong>A+</strong> = 4.3 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>A</strong> = 4.0 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>A-</strong> = 3.7 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>B+</strong> = 3.3 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>B</strong> = 3.0 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>B-</strong> = 2.7 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>C+</strong> = 2.3 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>C</strong> = 2.0 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>C-</strong> = 1.7 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>D+</strong> = 1.3 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>D</strong> = 1.0 grade point</li>
+                    <li class="col-sm-6 col-md-4"><strong>D-</strong> = 0.7 grade points</li>
+                    <li class="col-sm-6 col-md-4"><strong>F</strong> = 0.0 grade points</li>
+                </ul>
+            </div>
+            
+            <p class="small note-text">Note: Most schools, colleges, and universities in the United States use a grading system based on the letters above, though E is sometimes used instead of F. Grading systems do differ however based on what constitutes an A or B, and some do not include grades such as an A+ or a B-. Others may attribute more weight to certain courses, and thus whatever grade is attained in the course will have a larger effect on overall GPA. The calculator can account for this based on the number of credits attributed to a course, where credit is the "weighting" of the course, as shown in the examples below.</p>
+        </div>
+    </section>
+
+    <!-- Examples Section with White Background -->
+    <section class="examples-section">
+        <div class="container">
+            <h2 class="section-title">Examples of GPA Calculation</h2>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="h5">Example 1:</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed example-table">
+                            <thead>
+                                <tr class="active">
+                                    <th>Course</th>
+                                    <th>Credit</th>
+                                    <th>Score</th>
+                                    <th>Grade Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Math</td>
+                                    <td>4</td>
+                                    <td>A+</td>
+                                    <td>4 x 4.3 = 17.2</td>
+                                </tr>
+                                <tr>
+                                    <td>Physics</td>
+                                    <td>2</td>
+                                    <td>B</td>
+                                    <td>2 x 3.0 = 6.0</td>
+                                </tr>
+                                <tr>
+                                    <td>English</td>
+                                    <td>3</td>
+                                    <td>A</td>
+                                    <td>3 x 4.0 = 12.0</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="active">
+                                    <td><strong>Total</strong></td>
+                                    <td>9</td>
+                                    <td>NA</td>
+                                    <td>35.2</td>
+                                </tr>
+                                <tr class="success">
+                                    <td><strong>GPA</strong></td>
+                                    <td colspan="3">35.2 / 9 = 3.91</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <h3 class="h5">Example 2:</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed example-table">
+                            <thead>
+                                <tr class="active">
+                                    <th>Course</th>
+                                    <th>Credit</th>
+                                    <th>Score</th>
+                                    <th>Grade Points</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Biology</td>
+                                    <td>4</td>
+                                    <td>A-</td>
+                                    <td>4 x 3.7 = 14.8</td>
+                                </tr>
+                                <tr>
+                                    <td>Chemistry</td>
+                                    <td>3</td>
+                                    <td>C</td>
+                                    <td>3 x 2.0 = 6.0</td>
+                                </tr>
+                                <tr>
+                                    <td>Chemistry Lab</td>
+                                    <td>2</td>
+                                    <td>B+</td>
+                                    <td>2 x 3.3 = 6.6</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="active">
+                                    <td><strong>Total</strong></td>
+                                    <td>9</td>
+                                    <td>NA</td>
+                                    <td>27.4</td>
+                                </tr>
+                                <tr class="success">
+                                    <td><strong>GPA</strong></td>
+                                    <td colspan="3">27.4 / 9 = 3.04</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tips Section with  Cards -->
+    <section class="card-section">
+        <div class="container">
+            <h2 class="section-title">Tips for Improving Your GPA</h2>
+            
+            <div class="card-boxes">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Attend All Classes</h3>
+                        <p>Presence is crucial. You'll absorb more information and understand expectations better.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Active Participation</h3>
+                        <p>Engage in discussions, ask questions, and contribute. It reinforces learning and shows initiative.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Time Management</h3>
+                        <p>Use planners or apps to schedule study time, assignments, and breaks. Avoid procrastination.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Effective Study Habits</h3>
+                        <p>Find what works for you – flashcards, study groups, summarizing notes, practice problems. Focus on understanding, not just memorization.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Utilize Resources</h3>
+                        <p>Visit professor's office hours, use tutoring centers, consult library resources, and collaborate with peers (appropriately).</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Prioritize Assignments</h3>
+                        <p>Understand the weight of each assignment/exam. Allocate effort accordingly, focusing on high-impact tasks.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Review Feedback</h3>
+                        <p>Don't just look at the grade on returned work. Understand the feedback and learn from mistakes.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Plan Your Course Load</h3>
+                        <p>Balance challenging courses with manageable ones. Don't overload yourself, especially with subjects you find difficult.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- More Converters Section -->
+<section class="more-converters-section">
+    <div class="container">
+        <h2 class="section-title">More Converters</h2>
+        
+        <div class="row converters-row">
+            
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="cgpa.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg11.png" alt="Cumulative GPA Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Cumulative GPA Calculator</h3>
+                        <p>Calculate your overall GPA across multiple semesters with our comprehensive tool.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="converter.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg12.png" alt="Grade Converter" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Grade Converter</h3>
+                        <p>Convert between different grading systems and understand how your grades translate.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="percentage.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/sd1.png" alt="Percentage Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Percentage Calculator</h3>
+                        <p>Convert your GPA or grades to percentage and vice versa with our accurate calculator.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="js/script.js"></script>
+    <script src="js/sgpa.js"></script>
+</body>
+</html>

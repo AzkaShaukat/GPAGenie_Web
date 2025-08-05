@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator - GPA Genie</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/sgpa.css">
+    <link rel="stylesheet" href="css/cgpa.css">
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+     <header class="header container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Mobile Search (visible on xs and sm screens) -->
+            <div class="navbar-right visible-xs visible-sm header-right">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="sgpa.html">SGPA</a></li>
+                    <li class="active"><a href="cgpa.html">CGPA</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-left page-title" style="padding-top:40px">CGPA Calculator</h1>
+                    <p class="lead text-left">CGPA stands for Cumulative Grade Point Average. It represents the average of grade points obtained in all semesters completed so far. It provides an overall measure of a student's academic performance.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="hero-image-container">
+                        <img src="images/bg11.png" alt="Cumulative Study Illustration" class="img-responsive hero-image" style="padding-bottom:20px; height400px;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="row">
+                <!-- Stacking sections vertically -->
+<div class="col-md-12 col-lg-6 col-lg-offset-3">
+                    <section class="student-info-section info-section">
+                        <h2 class="section-title">Student Information</h2>
+                        <form id="studentInfoForm">
+                            <div class="form-group">
+                                <label for="name" class="control-label">Name:</label>
+                                <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="control-label">Major/Program:</label>
+                                <input type="text" id="subject" class="form-control" placeholder="e.g. Computer Science">
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="control-label">Email (Optional):</label>
+                                <input type="email" id="email" class="form-control" placeholder="you@example.com">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" id="result-card"> Include details in result card
+                                </label>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+                
+<div class="col-md-12 col-lg-6 col-lg-offset-3">
+                    <section class="sgpa-form-section info-section">
+                        <h2 class="section-title">Enter Semester Details</h2>
+                        <form id="cgpaCalcForm">
+                            <div id="semester-inputs-area">
+                            </div>
+
+                            <div class="button-row clearfix">
+                                <button type="button" class="btn add-course-btn pull-left" id="addSemesterBtn"><i class="fas fa-plus"></i> Add Semester</button>
+                                <button type="submit" class="btn calculate-btn pull-right" id="calculateCgpaBtn" style="display: none;"><i class="fas fa-calculator"></i> Calculate CGPA</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+
+            <section id="result-area" style="display: none;">
+                <div class="result-container">
+                    <h2 class="section-title text-center">Your Cumulative Result</h2>
+
+                    <div class="row">
+                        <div class="col-md-7">
+                            <div class="table-responsive">
+                                <table class="table table-striped table-hover result-table">
+                                    <caption>Summary of your grades</caption>
+                                    <thead>
+                                        <tr class="bg-primary">
+                                            <th>Course Name</th>
+                                            <th>Grade</th>
+                                            <th>Credits</th>
+                                            <th>Grade Points</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="result-table-body">
+                                    </tbody>
+                                    <tfoot>
+                                        <tr class="active">
+                                            <td colspan="2"><strong>Total</strong></td>
+                                            <td id="result-total-credits"></td>
+                                            <td id="result-total-points"></td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <div class="cgpa-display">
+                                <div class="cgpa-label">Your CGPA is:</div>
+                                <div id="cgpa-value" class="cgpa-score">0.00</div>
+                            </div>
+                            <div class="progress-circle-container">
+                                <svg class="progress-ring" width="160" height="160">
+                                    <circle class="progress-ring-background" stroke-width="14" fill="transparent" r="70" cx="80" cy="80"/>
+                                    <circle id="progress-ring-foreground" class="progress-ring-circle" stroke-width="14" stroke-linecap="round" fill="transparent" r="70" cx="80" cy="80"/>
+                                </svg>
+                                <div class="progress-text" id="progress-circle-text">0%</div>
+                            </div>
+                            <button class="btn btn-default" id="printResultBtn"><i class="fas fa-print"></i> Print Result</button>
+                        </div>
+                    </div>
+                    <div id="error-message" class="alert alert-danger" style="display: none;"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="understanding-section">
+        <div class="container">
+            <h2 class="section-title">Understanding CGPA</h2>
+            <p class="section-text">The Cumulative Grade Point Average (CGPA) is a measure of a student's academic performance across all semesters or academic periods completed. Unlike SGPA, which reflects performance in a single semester, CGPA provides an overall average, giving a broader picture of consistency and achievement over time.
+
+It is calculated by taking the sum of the grade points earned in all courses across all semesters and dividing it by the total number of credit hours attempted in those semesters. The CGPA is often used by universities, potential employers, and for academic honors.</p>
+            <div class="content-card">
+                <h3 class="h5">How CGPA is Calculated:</h3>
+                <p class="formula-text text-center"><b>
+                    CGPA = &Sigma; (SGPA<sub>i</sub> &times; Credits<sub>i</sub>) / &Sigma; Credits<sub>i</sub> </b>
+                </p>
+                <p class="small text-center">Where 'i' represents each semester.</p>
+            </div>
+            <p class="small note-text">Note: This calculator assumes you are entering the final SGPA and total credits earned for each completed semester. Different institutions may have slightly different methods for calculating CGPA, especially regarding repeated courses or transfer credits. Always refer to your institution's official guidelines.</p>
+        </div>
+    </section>
+
+    <section class="examples-section">
+        <div class="container">
+            <h2 class="section-title">Example of CGPA Calculation</h2>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h3 class="h5 text-center">Example: CGPA after 3 Semesters</h3>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-condensed example-table">
+                            <thead>
+                                <tr class="active"><th>Semester</th><th>SGPA</th><th>Total Credits</th><th>Semester Points</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Semester 1</td><td>3.50</td><td>15</td><td>52.50</td></tr>
+                                <tr><td>Semester 2</td><td>3.80</td><td>16</td><td>60.80</td></tr>
+                                <tr><td>Semester 3</td><td>3.20</td><td>14</td><td>44.80</td></tr>
+                            </tbody>
+                            <tfoot>
+                                <tr class="active"><td><strong>Total</strong></td><td>NA</td><td>45</td><td>158.10</td></tr>
+                                <tr class="success"><td><strong>CGPA</strong></td><td colspan="3">158.10 / 45 = 3.51</td></tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="card-section">
+        <div class="container">
+            <h2 class="section-title">Tips for Improving Your CGPA</h2>
+            <div class="card-boxes">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Focus on Current Semesters</h3>
+                        <p>The most effective way to boost your CGPA is to perform well in your current and upcoming semesters, can significantly average up your cumulative score.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Address Weaknesses</h3>
+                        <p>Analyze which subjects or types of courses have been challenging in the past. Seek help from professors, tutors, or study groups in those areas.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Prioritize High-Credit Courses</h3>
+                        <p>Courses with more credit hours have a larger impact on your GPA. Focus extra effort on these subjects to maximize their positive contribution.</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card-box">
+                        <h3>Develop Study Habits</h3>
+                        <p>Consistent studying, effective time management, and active engagement in classes are fundamental to improving performance in any semester.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- More Converters Section -->
+<section class="more-converters-section">
+    <div class="container">
+        <h2 class="section-title">More Converters</h2>
+        
+        <div class="row converters-row">
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="sgpa.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg10.png" alt="Semester GPA Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Semester GPA Calculator</h3>
+                        <p>Calculate your semester grade point average based on your course grades and credits.</p>
+                    </div>
+                </a>
+            </div>
+
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="converter.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg12.png" alt="Grade Converter" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Grade Converter</h3>
+                        <p>Convert between different grading systems and understand how your grades translate.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="percentage.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/sd1.png" alt="Percentage Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Percentage Calculator</h3>
+                        <p>Convert your GPA or grades to percentage and vice versa with our accurate calculator.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+   
+    <script src="js/script.js"></script>
+    <script src="js/cgpa.js"></script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator - GPA Genie</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/percentage.css">
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+       <header class="header container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Mobile Search (visible on xs and sm screens) -->
+            <div class="navbar-right visible-xs visible-sm header-right">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="sgpa.html">SGPA</a></li>
+                    <li><a href="cgpa.html">CGPA</a></li>
+                    <li><a href="converter.html">Converter</a></li>
+                    <li class="active"><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    <!-- Hero Section with Light Green Background -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <h1 class="text-center page-title">Percentage Calculator</h1>
+                    <p class="lead text-center">Use this test mark to percentage calculator to easily calculate the percentage given one or more test grades (marks) and the maximum possible number of marks. If you enter marks from multiple test exams or test tasks, they will be summed before the percentage calculation. Suitable for all school and college level exams.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Extended Green Background -->
+    <div class="extended-green-bg"></div>
+
+    <!-- Main Content with White Background -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Percentage Calculator Section -->
+            <div class="row">
+                <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+                    <section class="percentage-section">
+                        <div class="percentage-form-container">
+                            <h2 class="section-title">Calculate Your Percentage</h2>
+                            <form id="percentageForm">
+                                <div class="row calculator-inputs">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="scoredMarks">Scored Marks:</label>
+                                            <input type="number" id="scoredMarks" class="form-control" placeholder="Enter your score" min="0">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label for="totalMarks">Out of Marks:</label>
+                                            <input type="number" id="totalMarks" class="form-control" placeholder="Maximum possible" min="1" value="100">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="result-container">
+                                            <div class="result-label">Your Percentage:</div>
+                                            <div id="percentageResult" class="result-value">0%</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div class="percentage-table-container">
+                                <h3 class="table-title">Mark Percentages Example</h3>
+                                <p class="table-description">The table below shows the test grades on a given examination and their corresponding percentages assuming a maximum mark of 200.</p>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered percentage-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Marks on test</th>
+                                                <th>Marks percentage</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>20</td>
+                                                <td>10%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>40</td>
+                                                <td>20%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>60</td>
+                                                <td>30%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>80</td>
+                                                <td>40%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>100</td>
+                                                <td>50%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>120</td>
+                                                <td>60%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>140</td>
+                                                <td>70%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>160</td>
+                                                <td>80%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>180</td>
+                                                <td>90%</td>
+                                            </tr>
+                                            <tr>
+                                                <td>200</td>
+                                                <td>100%</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <!-- Information Section -->
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <section class="info-section">
+                        <h2 class="section-title">Marks to Percentage Formula</h2>
+                        <p class="section-text">
+                            In the simplest case we have just a single exam and therefore a single test grade to work with. In this case the calculation to convert marks into percentage is straightforward by following this formula:
+                        </p>
+                        <div class="formula-box">
+                            <p class="formula">Mark Percentage = Scored Mark / Test Maximum × 100</p>
+                        </div>
+                        <p class="section-text">
+                            "Test maximum" corresponds to the "Out of ... marks" input field in our test grade percentage calculator.
+                        </p>
+                        <p class="section-text">
+                            If an exam is scored in separate test sections, or if you are calculating the percentage from several separate exams, then the following formula is applicable:
+                        </p>
+                        <div class="formula-box">
+                            <p class="formula">Mark Percentage = Sum of Scored Marks / Test(s) Maximum × 100</p>
+                        </div>
+                        <p class="section-text">
+                            The sum is calculated in the usual way using simple algebra. Our percentage calculator of marks handles that for you automatically.
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- More Converters Section -->
+<section class="more-converters-section">
+    <div class="container">
+        <h2 class="section-title">More Converters</h2>
+        
+        <div class="row converters-row">
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="sgpa.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg10.png" alt="Semester GPA Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Semester GPA Calculator</h3>
+                        <p>Calculate your semester grade point average based on your course grades and credits.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="cgpa.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg11.png" alt="Cumulative GPA Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Cumulative GPA Calculator</h3>
+                        <p>Calculate your overall GPA across multiple semesters with our comprehensive tool.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="converter.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg12.png" alt="Grade Converter" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Grade Converter</h3>
+                        <p>Convert between different grading systems and understand how your grades translate.</p>
+                    </div>
+                </a>
+            </div>
+            
+           
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/percentage.js"></script>
+</body>
+</html>

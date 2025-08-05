@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Converter - GPA Genie</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style2.css">
+    <link rel="stylesheet" href="css/converter.css">
+</head>
+<body>
+
+<marquee>© 2025 GPA Genei — Empowering Students with Smarter Academic Tools to Track, Improve, and Own Their GPA Journey. All rights reserved.</marquee>
+
+     <header class="header container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand logo-area" href="index.html">
+                    <img src="images/logo.png" alt="Logo" class="logo">
+                </a>
+            </div>
+
+            <!-- Mobile Search (visible on xs and sm screens) -->
+            <div class="navbar-right visible-xs visible-sm header-right">
+                <form id="searchFormMobile" class="navbar-form" onsubmit="return false;">
+                    <div class="form-group">
+                        <input id="searchInputMobile" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                    </div>
+                </form>
+            </div>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav main-nav">
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="sgpa.html">SGPA</a></li>
+                    <li><a href="cgpa.html">CGPA</a></li>
+                    <li class="active"><a href="converter.html">Converter</a></li>
+                    <li><a href="percentage.html">Percentage</a></li>
+                    <li><a href="blog.php">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+
+                <div class="nav navbar-nav navbar-right hidden-xs hidden-sm header-right">
+                    <form id="searchFormDesktop" class="navbar-form navbar-left" onsubmit="return false;">
+                        <div class="form-group">
+                            <input id="searchInputDesktop" type="text" class="form-control search-input" placeholder="Search..." autocomplete="off">
+                        </div>
+                    </form>
+                    <ul class="nav navbar-nav">
+                        <li><a href="login.html" class="about">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+    <!-- Hero Section with Light Green Background -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <h1 class="text-center page-title">GPA Converter</h1>
+                    <p class="lead text-center">Convert between letter grades, percentage scores, and GPA points with our easy-to-use calculator and understand how your grades translate. This tool helps you understand how different grading systems relate to each other.</p>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+
+    <!-- Extended Green Background -->
+    <div class="extended-green-bg"></div>
+
+    <!-- Main Content with White Background -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Converter Tool Section -->
+            <div class="row">
+    <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    <section class="converter-section">
+                        <div class="converter-form-container">
+                            <h2 class="section-title">Choose Scale to Convert</h2>
+                            <form id="converterForm">
+                                <div class="row converter-inputs">
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="letterGrade">Letter Grade:</label>
+                                            <select id="letterGrade" class="form-control">
+                                                <option value="">Select Grade</option>
+                                                <option value="A+">A+</option>
+                                                <option value="A">A</option>
+                                                <option value="A-">A-</option>
+                                                <option value="B+">B+</option>
+                                                <option value="B">B</option>
+                                                <option value="B-">B-</option>
+                                                <option value="C+">C+</option>
+                                                <option value="C">C</option>
+                                                <option value="C-">C-</option>
+                                                <option value="D+">D+</option>
+                                                <option value="D">D</option>
+                                                <option value="F">F</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="percentGrade">Percentage:</label>
+                                            <select id="percentGrade" class="form-control">
+                                                <option value="">Select Percentage</option>
+                                                <option value="100">100</option>
+                                                <option value="99">99</option>
+                                                <option value="98">98</option>
+                                                <option value="97">97</option>
+                                                <option value="96">96</option>
+                                                <option value="95">95</option>
+                                                <option value="94">94</option>
+                                                <option value="93">93</option>
+                                                <option value="92">92</option>
+                                                <option value="91">91</option>
+                                                <option value="90">90</option>
+                                                <option value="89">89</option>
+                                                <option value="88">88</option>
+                                                <option value="87">87</option>
+                                                <option value="86">86</option>
+                                                <option value="85">85</option>
+                                                <option value="84">84</option>
+                                                <option value="83">83</option>
+                                                <option value="82">82</option>
+                                                <option value="81">81</option>
+                                                <option value="80">80</option>
+                                                <option value="79">79</option>
+                                                <option value="78">78</option>
+                                                <option value="77">77</option>
+                                                <option value="76">76</option>
+                                                <option value="75">75</option>
+                                                <option value="74">74</option>
+                                                <option value="73">73</option>
+                                                <option value="72">72</option>
+                                                <option value="71">71</option>
+                                                <option value="70">70</option>
+                                                <option value="69">69</option>
+                                                <option value="68">68</option>
+                                                <option value="67">67</option>
+                                                <option value="66">66</option>
+                                                <option value="65">65</option>
+                                                <option value="60">60</option>
+                                                <option value="55">55</option>
+                                                <option value="50">50</option>
+                                                <option value="45">45</option>
+                                                <option value="40">40</option>
+                                                <option value="35">35</option>
+                                                <option value="30">30</option>
+                                                <option value="25">25</option>
+                                                <option value="20">20</option>
+                                                <option value="15">15</option>
+                                                <option value="10">10</option>
+                                                <option value="5">5</option>
+                                                <option value="0">0</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="form-group">
+                                            <label for="gpaPoints">GPA Points:</label>
+                                            <input type="number" id="gpaPoints" class="form-control" placeholder="0.0-4.0" min="0" max="4.0" step="0.1">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            
+                            <div class="conversion-table-container">
+                                <h3 class="table-title">List of Common GPA Conversions</h3>
+                                <div class="table-responsive">
+                                    <table class="table table-bordered conversion-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Letter Grade</th>
+                                                <th>Percent Grade</th>
+                                                <th>4.0 GPA Scale</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>A+</td>
+                                                <td>97–100</td>
+                                                <td>4.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>A</td>
+                                                <td>93–96</td>
+                                                <td>4.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>A-</td>
+                                                <td>90–92</td>
+                                                <td>3.7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B+</td>
+                                                <td>87–89</td>
+                                                <td>3.3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B</td>
+                                                <td>83–86</td>
+                                                <td>3.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>B-</td>
+                                                <td>80–82</td>
+                                                <td>2.7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>C+</td>
+                                                <td>77–79</td>
+                                                <td>2.3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>C</td>
+                                                <td>73–76</td>
+                                                <td>2.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>C-</td>
+                                                <td>70–72</td>
+                                                <td>1.7</td>
+                                            </tr>
+                                            <tr>
+                                                <td>D+</td>
+                                                <td>67–69</td>
+                                                <td>1.3</td>
+                                            </tr>
+                                            <tr>
+                                                <td>D</td>
+                                                <td>65–66</td>
+                                                <td>1.0</td>
+                                            </tr>
+                                            <tr>
+                                                <td>F</td>
+                                                <td>Below 65</td>
+                                                <td>0.0</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            
+            <!-- Information Section -->
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="info-section">
+                        <h2 class="section-title">Your GPA Scale and You</h2>
+                        <p class="section-text">
+                            Knowing how your grades are converted from a percentage to a letter grade, and then into your GPA can really help you plan your future to meet your needs and goals. Knowing how each individual class grade is either going to help or hurt you can make a big difference. It might, for example, help you understand that you need to study for a particular final much more than another in a different class.
+                        </p>
+                        <p class="section-text">
+                            Remember, colleges, universities, scholarship committees and future employers are looking at your GPA as an indicator of how good a student you are. Aim high!
+                        </p>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<!-- More Converters Section -->
+<section class="more-converters-section">
+    <div class="container">
+        <h2 class="section-title">More Converters</h2>
+        
+        <div class="row converters-row">
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="sgpa.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg10.png" alt="Semester GPA Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Semester GPA Calculator</h3>
+                        <p>Calculate your semester grade point average based on your course grades and credits.</p>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="cgpa.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/bg11.png" alt="Cumulative GPA Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Cumulative GPA Calculator</h3>
+                        <p>Calculate your overall GPA across multiple semesters with our comprehensive tool.</p>
+                    </div>
+                </a>
+            </div>
+            
+            
+            <div class="col-lg-4 col-md-4 col-sm-6 converter-box">
+                <a href="percentage.html" class="converter-link">
+                    <div class="converter-img-container">
+                        <img src="images/sd1.png" alt="Percentage Calculator" class="img-responsive converter-img">
+                    </div>
+                    <div class="converter-content">
+                        <h3>Percentage Calculator</h3>
+                        <p>Convert your GPA or grades to percentage and vice versa with our accurate calculator.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container-fluid footer-container">
+        <div class="row">
+            <div class="col-sm-6 footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+            <div class="col-sm-6 social-icons text-right">
+                <a href="#" class="social-icon"> <img src="images/facebook-logo.svg" alt="Facebook"> </a>
+                <a href="#" class="social-icon"> <img src="images/instagram-logo.svg" alt="Instagram"> </a>
+                <a href="#" class="social-icon"> <img src="images/linkedin-logo.svg" alt="LinkedIn"> </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/converter.js"></script>
+</body>
+</html>
